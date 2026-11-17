@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego Snake - Tipo Google</title>
+    <link rel="stylesheet" href="snake.css">
+</head>
+<body>
+    <div class="game-container">
+        
+        <div id="start-screen" class="screen">
+            <h1>SNAKE GAME</h1>
+            <div class="form-group">
+                <label for="player-name">Tu Nombre:</label>
+                <input type="text" id="player-name" placeholder="Escribe tu nombre..." maxlength="15">
+            </div>
+            <div class="form-group">
+                <label>Color de la Víbora:</label>
+                <div class="color-options">
+                    <button class="color-btn green selected" data-color="#2ecc71" data-head="#27ae60">Verde</button>
+                    <button class="color-btn blue" data-color="#3498db" data-head="#2980b9">Azul</button>
+                    <button class="color-btn purple" data-color="#9b59b6" data-head="#8e44ad">Morado</button>
+                    <button class="color-btn burgundy" data-color="#800020" data-head="#4a0013">Bordó</button>
+                </div>
+            </div>
+
+            
+            <div class="form-group">
+                <label>🏆 Ranking de Jugadores:</label>
+                <div class="ranking-box">
+                    <ul id="ranking-list">
+                        <li class="no-players">Aún no hay partidas registradas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <button id="start-btn" class="btn">Jugar</button>
+        </div>
+
+        
+        <div id="game-board" class="hidden">
+            <div class="score-board">
+                <div>Jugador: <span id="display-name">-</span></div>
+                <div>Puntos: <span id="current-score">0</span></div>
+                <div>Récord Sesión: <span id="high-score">0</span></div>
+            </div>
+            <canvas id="gameCanvas" width="400" height="400"></canvas>
+        </div>
+
+        
+        <div id="game-over-screen" class="screen hidden">
+            <h2 id="game-over-title">¡JUEGO TERMINADO!</h2>
+            <p id="game-over-message"></p>
+            <div class="game-over-buttons">
+                <button id="restart-btn" class="btn">Volver a Jugar</button>
+                <button id="menu-btn" class="btn secondary-btn">Volver al Menú</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="SNAKE.js"></script>
+</body>
+</html>
